@@ -10,15 +10,15 @@ np = [
     [0,0,0,0,0,0,0,0,0]
 ]
 board = [
-    [7,8,0,4,0,0,1,2,0],
-    [6,0,0,0,7,5,0,0,9],
-    [0,0,0,6,0,1,0,7,8],
-    [0,0,7,0,4,0,2,6,0],
-    [0,0,1,0,5,0,9,3,0],
-    [9,0,4,0,6,0,0,0,5],
-    [0,7,0,3,0,0,0,1,2],
-    [1,2,0,0,0,7,4,0,0],
-    [0,4,9,2,0,6,0,0,7]
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
 ]
 
 def costume_board(bo):
@@ -33,7 +33,7 @@ def costume_board(bo):
         bo[i][6] = int(input("Enter number:"))
         bo[i][7] = int(input("Enter number:"))
         bo[i][8] = int(input("Enter number:"))
-    print(np)
+    print(bo)
 
 def validspot(bo, num, pos):
     # Check row
@@ -94,8 +94,7 @@ def backtrack(bo):
 
     return False # makes "if backtrack(bo):" false therefore setting bo[row][col] = 0 and recursively calling our backtrack function
 
-
-
-costume_board(np)
-print("\n"*2)
-print_board(np)
+print_board(board)
+backtrack(board)
+print("\n"*3)
+print_board(board)
